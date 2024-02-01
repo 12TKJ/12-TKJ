@@ -1,0 +1,55 @@
+Membuat situs web statis menggunakan Node.js dapat dilakukan dengan beberapa langkah sederhana. Berikut adalah panduan dasar untuk membuat situs web statis dengan Node.js:
+
+Persiapkan Proyek:
+Buat direktori proyek baru dan masuk ke dalamnya melalui terminal atau command prompt.
+
+bash
+Copy code
+mkdir nama-proyek
+cd nama-proyek
+Inisialisasi Proyek:
+Inisialisasikan proyek Node.js dengan perintah npm init. Anda dapat menjawab pertanyaan yang muncul atau cukup tekan Enter untuk menggunakan nilai default.
+
+bash
+Copy code
+npm init
+Instal Express:
+Instal paket Express, kerangka kerja web Node.js yang populer, dengan perintah berikut:
+
+bash
+Copy code
+npm install express
+Buat Berkas Server:
+Buat berkas JavaScript (misalnya, server.js) dan buat server Express sederhana di dalamnya.
+
+javascript
+Copy code
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.use(express.static('public'));
+
+app.listen(port, () => {
+  console.log(`Server berjalan di http://localhost:${port}`);
+});
+Dalam contoh di atas, kita menggunakan direktori public untuk menyimpan file statis seperti HTML, CSS, dan gambar.
+
+Tambahkan File Statis:
+Tambahkan file statis seperti HTML, CSS, atau gambar ke dalam direktori public.
+
+arduino
+Copy code
+nama-proyek
+└── public
+    ├── index.html
+    └── style.css
+Jalankan Server:
+Jalankan server dengan menjalankan berkas server yang telah dibuat.
+
+bash
+Copy code
+node server.js
+Buka browser dan akses http://localhost:3000 atau port yang Anda tentukan. Anda sekarang memiliki situs web statis sederhana yang di-host oleh server Node.js.
+
+Selain Express, Anda juga dapat menggunakan modul http built-in Node.js untuk membuat server web sederhana. Namun, Express memberikan abstraksi yang lebih tinggi dan memudahkan pengelolaan rute serta middleware. Jika proyek Anda berkembang, Anda mungkin ingin mengeksplorasi opsi lain atau menggunakan generator proyek seperti Yeoman untuk proyek Node.js yang lebih kompleks.
